@@ -1,0 +1,112 @@
+body, #dcontent, .dbtn {
+  text-align: center;
+}
+
+* {
+  transition: opacity .5s linear;
+}
+
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+#toblur {
+  transition: filter .5s linear;
+}
+
+#toblur.dopen {
+  filter: blur(.2rem);
+}
+
+.dcontent {
+  height: calc(100% - 4.5rem);
+  overflow: scroll;
+}
+
+#dcontent .teacherimg {
+  height: 50%;
+}
+
+#dcontent p {
+  width: 100%;
+}
+
+.attrname {
+  margin-bottom: 0;
+}
+
+.dbtn {
+  display: inline-block;
+  margin: .5rem;
+  border: .1rem solid black;
+  border-radius: .2rem;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.dbtn:hover {
+  background-color: rgba(200, 200, 200, 0.5);
+}
+
+.dclose {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 3rem;
+  font-size: 2rem;
+  -ms-user-select: none;
+  -mox-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#dvraw {
+  padding: .1rem;
+}
+
+#sloader {
+  position: fixed;
+  top: calc(50% - 1.5rem);
+  left: calc(50% - 1.5rem);
+  border: .1rem solid black;
+  border-right: .1rem solid transparent;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  border: .1rem solid grey;
+  border-right: .1rem solid transparent;
+  border-radius: 3rem;
+  animation: loading 1s linear 0s infinite;
+}
+
+.btn.btn-light.btnMatch {
+  background-color: #cfc;
+}
+
+/* Add them Comc Neue font so people without a Windows Phone can enjoy the Comic Sans button, too */
+@font-face {
+  font-family: 'Comic Neue';
+  src: url('./comic-neue/ComicNeue-Regular.eot');
+  src: url('./comic-neue/ComicNeue-Regular.eot?#iefix') format('embedded-opentype'),
+       url('./comic-neue/ComicNeue-Regular.woff2') format('woff2'),
+       url('./comic-neue/ComicNeue-Regular.woff') format('woff'),
+       url('./comic-neue/ComicNeue-Regular.ttf')  format('truetype');
+  font-weight: 400;
+}

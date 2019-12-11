@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="BULME Lehrersuche">
+    <meta name="application-name" content="BULME Lehrersuche">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileImage" content="mstile-144x144.png">
+    <meta name="theme-color" content="#4162cb">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>BULME Lehrersuche</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="toblur">
+        <h1>BULME Lehrersuche</h1>
+        <span id="mloader" class="spinner" style="display: none; opacity: 0;"></span>
+        <span id="sloader" class="spinner" style="display: none; opacity: 0;"></span>
+        <div id="main" class="jumbotron" style="display: none; opacity: 0;">
+          <div class="form-group">
+            <label for="search">Name oder Kurzzeichen:</label>
+            <input id="search" class="form-control" type="text" autofocus="autofocus" />
+          </div>
+          <div id="sdiv"></div>
+        </div>
+        <footer>
+          Website: &copy;2019 @dereisl
+          <br/>
+          Lehrer & Fotos: HTL-Bulme
+          <br/>
+          <p id="status"></p>
+          <a id="settingsbtn" href="#">Einstellungen</a>
+        </footer>
+      </div>
+      <div id="dialog" class="dialog" style="display: none; opacity: 0;">
+        <span id="dclose" class="dbtn dclose">&times;</span>
+        <span id="dvraw" class="dbtn">Original anzeigen</span>
+        <div id="dcontent" class="dcontent"></div>
+      </div>
+      <div id="settings" class="dialog" style="display: none; opacity: 0;">
+        <span id="sclose" class="dbtn dclose">&times;</span>
+        <div class="dcontent">
+          <button id="deletecache" class="btn">Cache leeren</button>
+          <button id="comicsans" class="btn"></button>
+        </div>
+      </div>
+
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

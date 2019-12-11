@@ -1,0 +1,13 @@
+/* Add the Comc Neue font so people without a Windows PC or Phone can enjoy the Comic Sans button, too */
+/* Big thanks to: http://comicneue.com/ for creating this awesome font */
+/* See /comic-neue/SIL-License.txt for information about the font's license */
+
+@font-face {
+  font-family: 'Comic Neue';
+  src: url('../fonts/ComicNeue-Regular.eot');
+  src: url('../fonts/ComicNeue-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ComicNeue-Regular.woff2') format('woff2'),
+       url('../fonts/ComicNeue-Regular.woff') format('woff'),
+       url('../fonts/ComicNeue-Regular.ttf')  format('truetype');
+  font-weight: 400;
+}
