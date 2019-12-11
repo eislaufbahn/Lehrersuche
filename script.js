@@ -10,7 +10,7 @@ const statusbox = document.getElementById("status");
 const settings = document.getElementById("settings");
 
 function proxyUrl(url) {
-  return "/proxy?url=" + encodeURIComponent(url);
+  return "/proxy/?url=" + encodeURIComponent(url);
 }
 
 var storage;
