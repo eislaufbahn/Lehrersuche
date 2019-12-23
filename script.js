@@ -86,6 +86,7 @@ function handleList(data, teacherlist) {
       }
     }
   });
+  document.getElementById("search").focus();
 
   searchresults.addEventListener("click", function(e) {
     if (e.target.tagName !== "BUTTON") return;
