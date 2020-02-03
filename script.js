@@ -53,7 +53,7 @@ function getBulmePage(callback) {
     appendTextElem(dcontent, "h2", "Fehler beim Aufrufen der Bulme Website.");
     fadeIn(dialog);
   });
-  xmlreq.open("GET", proxyUrl("https://www.bulme.at/bulme258/index.php/schule/lehrkoerper/lehrerinn"));
+  xmlreq.open("GET", proxyUrl("https://www.bulme.at/index.php/schule/lehrkoerper/lehrerinn"));
   xmlreq.send();
 }
 
