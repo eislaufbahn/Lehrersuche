@@ -109,7 +109,7 @@ function handleList(data, teacherlist) {
       img.style.display = "none";
     });
     img.className = "teacherimg";
-    img.src = "https://www.bulme.at/bulme258/tools/picture.php?kz=" + kz;
+    img.src = "https://www.bulme.at/tools/picture.php?kz=" + kz;
     dcontent.appendChild(img);
     getTeacherDetail(kz, function(details, wascached) {
       if (wascached) appendTextElem(dcontent, "p", "(Aus Cache:)");
@@ -146,7 +146,7 @@ function handleList(data, teacherlist) {
         refreshStatus();
       }
     });
-    detailreq.open("GET", proxyUrl("https://www.bulme.at/bulme258/tools/createTeacher3Info.php?kz=" + kz + "&v=" + tvar));
+    detailreq.open("GET", proxyUrl("https://www.bulme.at/tools/createTeacher3Info.php?kz=" + kz + "&v=" + tvar));
     detailreq.send();
   }
 }
