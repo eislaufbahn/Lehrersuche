@@ -35,21 +35,13 @@ if (storageav && !storage.getItem("storage_version")) {
 }
 
 fadeIn(mloader);
-if (storageav && storage.getItem("list")) {
-  statusbox.innerHTML += "<br/>Liste vom Cache geladen.";
-  getBulmePage(function(data) {
-    handleList(data, getList(data));
-  });
-} else {
-  getBulmePage(function(data) {
-    handleList(data, getList(data));
-  });
-}
+getBulmePage(function(data) {
+  handleList(data, getList(data));
+});
 
 function getBulmePage(callback) {
   const xmlreq = new XMLHttpRequest();
   xmlreq.addEventListener("load", function() {
-    if (storageav) storage.setItem("list", this.responseText);
     callback(this.responseText);
   });
   xmlreq.addEventListener("error", function() {
