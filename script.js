@@ -28,6 +28,11 @@ function refreshStatus() {
   }
   statusbox.innerHTML = ((storageav) ? (Math.max(0, storage.length - 1) + " Lehrer im Cache.") : ("Cache nicht verfügbar."));
 }
+if (storageav && !storage.getItem("storage_version")) {
+  storage.clear();
+  console.log("Storage cleared because of version change");
+  storage.setItem("storage_version", "1");
+}
 
 fadeIn(mloader);
 if (storageav && storage.getItem("list")) {
@@ -132,9 +137,11 @@ function handleList(data, teacherlist) {
     }
     const detailreq = new XMLHttpRequest();
     detailreq.addEventListener("load", function() {
+      var namereg = /<td class="teacherDetailName" colspan="2">(.*?) ?<\/td>/;
       var detailreg = /<td class="teacherDetailAttr">(.*?)<\/td><td(?: class="teacherDetailValue")?>(.*?)<\/td>/g;
       var tempresult;
       var details = {raw: this.responseText, attrs: {}};
+      details.attrs["Name:"] = namereg.exec(this.responseText)[1];
       while ((tempresult = detailreg.exec(this.responseText)) !== null) {
         if (tempresult[1] === "Sprechstunde:" && tempresult[2] === " ") continue;
         if (tempresult[1] === "&nbsp;" && tempresult[2] === "") continue;
