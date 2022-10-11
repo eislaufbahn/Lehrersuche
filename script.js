@@ -71,8 +71,6 @@ function handleList(data, teacherlist) {
   fadeOut(mloader);
   fadeIn(document.getElementById("main"));
 
-  var tvar = data.match(/teacherVar = ([0-9]+)/)[1];
-
   document.getElementById("search").addEventListener("input", function() {
     const searchVal = this.value.toLowerCase();
     searchresults.innerHTML = "";
@@ -145,7 +143,7 @@ function handleList(data, teacherlist) {
         refreshStatus();
       }
     });
-    detailreq.open("GET", proxyUrl("https://www.bulme.at/tools/createTeacher3Info.php?kz=" + kz + "&v=" + tvar));
+    detailreq.open("GET", proxyUrl("https://www.bulme.at/tools/createTeacher3Info.php?kz=" + kz));
     detailreq.send();
   }
 }
